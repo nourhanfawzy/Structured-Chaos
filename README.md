@@ -1,15 +1,26 @@
-# Structured-Chaos
+# **_Structured-Chaos*_*
 
-Nourhan Mohamed Fawzy 28-1190
+### Software Engineering Project Made By GUC Students:
 
-Mahira Galal 28-2192
+Student Name | Student ID
+------------   ----------
 
-Nourhan sediek 28-2760
+Nourhan Fawzy | 28-1190
 
-Nada Yasser 28-1620
+Mahira Galal | 28-2192
 
-Youssef Mahmoud Ahmed Mahmoud Montasser 28-10146
+Nourhan sediek | 28-2760
 
-Nada Emad 28-1900
+Nada Yasser | 28-1620
 
-Omar Kolkailah 28-2220
+Youssef Montasser | 28-10146
+
+Nada Emad | 28-1900
+
+Omar Kolkailah | 28-2220
+
+[You can visit our official GUC website!]
+(www.met.guc.edu.eg)  :point_left:
+
+
+:muscle: _We can do it_ :muscle:
