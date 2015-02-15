@@ -16,6 +16,6 @@
 
 7. Omar Kolkailah    | 28-2220    
 
-[Click here to visit our official GUC website](http://met.guc.edu.eg) :point_left:
+### [Click here to visit our official GUC website](http://met.guc.edu.eg) :point_left:
 
 :muscle: _We can do it_ :muscle:
