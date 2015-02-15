@@ -3,7 +3,8 @@
 ### Software Engineering Project Made By GUC Students:
 
 | Student Name | Student ID |
-| ------------   ---------- |
+
+| ------------ | ---------- |
 
 | Nourhan Fawzy | 28-1190 |
 
@@ -19,7 +20,7 @@
 
 | Omar Kolkailah | 28-2220 |
 
-[You can visit our official GUC website!](www.met.guc.edu.eg)  
+[Click here to visit our official GUC website!](http://met.guc.edu.eg).
 
 :point_up:
 
