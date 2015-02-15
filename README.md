@@ -2,23 +2,19 @@
 
 ### Software Engineering Project Made By GUC Students:
 
-| Student Name      | Student ID |
+1. Nourhan Fawzy     | 28-1190    
 
-| ------------      | ---------- |
+2. Mahira Galal      | 28-2192    
 
-| Nourhan Fawzy     | 28-1190    |
+3. Nourhan sediek    | 28-2760    
 
-| Mahira Galal      | 28-2192    |
+4. Nada Yasser       | 28-1620    
 
-| Nourhan sediek    | 28-2760    |
+5. Youssef Montasser | 28-10146   
 
-| Nada Yasser       | 28-1620    |
+6. Nada Emad         | 28-1900    
 
-| Youssef Montasser | 28-10146   |
-
-| Nada Emad         | 28-1900    |
-
-| Omar Kolkailah    | 28-2220    |
+7. Omar Kolkailah    | 28-2220    
 
 [Click here to visit our official GUC website](http://met.guc.edu.eg) :point_left:
 
