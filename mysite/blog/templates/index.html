@@ -1,0 +1,34 @@
+<style>
+
+div.post{
+    border-style:solid;
+    border-color:#287EC7;
+    text-align: center;
+}
+</style>
+
+
+<body>
+<div class="container">
+            <h1>Simple Blog</h1>
+            Current time: {{time}}
+<hr />
+
+<script>
+function myFunction() {
+    document.getElementById("b1").style.border-color=red
+}
+</script>
+    
+{% for post in entries %}
+	<div class="post">
+	    <h2>Title: {{ post.title }}</h2>
+	    <p>Posted on {{ post.timestamp }} by {{ post.user }} </p>
+	    <p>Body Text: {{ post.bodytext }}</p>
+	    <p>Category: {{post.category}}</p>
+	    <button id="b1" onclick="myFunction()" type="button">View Comments</button>
+	</div>
+	<hr />
+{% endfor %}
+</div>
+</body>
