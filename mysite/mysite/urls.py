@@ -15,7 +15,10 @@ urlpatterns = patterns('',
     url(r'^time$', current_datetime),
     url(r'^homepage$', homepage),
     url(r'^team$', teampage),
-
+	url(r'^login$', 'mysite.views.login_view'),
+	url(r'^logout$', 'mysite.views.logout_view'),
+	url(r'^invalid$', 'mysite.views.invalid_login'),
+	url(r'^admin/', include(admin.site.urls)),
     
     
     
