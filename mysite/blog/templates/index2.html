@@ -1,0 +1,27 @@
+<form method='post' action='/blog/'>{% csrf_token %}
+	<input type='text' name='title' placeholder='Title'/>
+	<input type='text' name='body' placeholder='Your Post'/>
+	<input type='file' name='file' />
+	<select name='category'>
+    <option value="" disabled="disabled" selected="selected">Please select a category</option>
+    <option value="X">X</option>
+    <option value="Y">Y</option>
+    <option value="Z">Z</option>
+    <option value="Other">Other</option>
+	</select>
+	<input type='submit' name='submit' />
+	
+</form>
+
+{% for p in posts %}
+	<a class='comment' href="/blog/view_post/{{ p.id }}">{{ p }}</a>
+	<br/>
+{% endfor %}
+
+<style>
+.comment{
+	border: 1px solid black;
+	padding:10px;
+	display: block;
+}
+</style>

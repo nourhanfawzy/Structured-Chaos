@@ -25,8 +25,10 @@ DEBUG = True
 TEMPLATE_DEBUG = True
 
 TEMPLATE_DIRS = (
-    '/Users/Fizo/Desktop/Structured-Chaos/mysite/templates',
-    '/Users/Fizo/Desktop/Structured-Chaos/mysite/blog/templates',
+    os.path.join(BASE_DIR, 'mysite/templates'),
+    os.path.join(BASE_DIR, 'mysite/blog/templates'),
+    #'/Users/Fizo/Desktop/Structured-Chaos/mysite/templates',
+    #'/Users/Fizo/Desktop/Structured-Chaos/mysite/blog/templates',
 )
 
 ALLOWED_HOSTS = []
@@ -90,4 +92,30 @@ STATIC_URL = '/static/'
 STAIC_ROOT = os.path.join(BASE_DIR,'static')
 MEDIA_ROOT = os.path.join(BASE_DIR,'static/media')
 MEDIA_URL = '/media/'
+
+
+PASSWORD_HASHERS = (
+    'django.contrib.auth.hashers.MD5PasswordHasher',
+)
+
+
+
+EMAIL_HOST = 'smtp.webfaction.com'
+EMAIL_HOST_USER = 'dreidev_info'
+EMAIL_HOST_PASSWORD = 'pass'
+DEFAULT_FROM_EMAIL = SERVER_EMAIL = 'info@dreidev.com'
+#SERVER_EMAIL = 'no-reply@dustour.org'
+
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
+
+TEMPLATE_CONTEXT_PROCESSORS = TCP + (
+    'mysite.context_processor.MyProcessors',
+    #'django.core.context_processors.request',
+    #'zinnia.context_processors.version',
+)
+
+
 

@@ -16,3 +16,25 @@ class comment(models.Model):
 	post = models.ForeignKey(post)
 	def __unicode__(self):
 		return self.text
+
+
+
+
+
+
+class Postt(models.Model):
+	title = models.CharField(max_length=256)
+	body = models.TextField()
+	category = models.TextField(default="Other")
+
+	def __unicode__(self):
+		return self.title
+
+class Commentt(models.Model):
+	post = models.ForeignKey(Postt)
+	comment = models.TextField()
+
+	def __unicode__(self):
+		return self.post + ': ' + self.comment[:10]	
+
+
