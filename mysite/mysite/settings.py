@@ -25,8 +25,8 @@ DEBUG = True
 TEMPLATE_DEBUG = True
 
 TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'mysite/templates'),
-    os.path.join(BASE_DIR, 'mysite/blog/templates'),
+    os.path.join(BASE_DIR, 'templates'),
+    os.path.join(BASE_DIR, 'blog/templates'),
     #'/Users/Fizo/Desktop/Structured-Chaos/mysite/templates',
     #'/Users/Fizo/Desktop/Structured-Chaos/mysite/blog/templates',
 )
