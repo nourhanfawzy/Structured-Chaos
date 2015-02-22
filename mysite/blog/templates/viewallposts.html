@@ -1,0 +1,21 @@
+
+{% for p in posts %}
+	<a class='comment' href="/blog/view_post2/{{ p.id }}">{{ p }}</a>
+	<br/>
+{% endfor %}
+
+
+<style>
+
+body{
+	  background: url("/media/images/bck.jpg");
+      background-size: cover;
+      background-position: fixed;
+}
+
+.comment{
+	border: 1px solid black;
+	padding:10px;
+	display: block;
+}
+</style>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<head>
+	<title> Signup Page </title>
+	<style>
+		body {
+			background: url("/media/images/bck.jpg");
+    		background-size: cover;
+    		background-position: fixed;
+			text-align: center;
+			font-size: 18px;
+			background-color: #6396FC;
+		}
+		p {
+			font-size:22px;
+		}
+		.form{
+			 
+			width:470px; 
+			margin:0 auto; 
+			padding-left:50px; 
+			padding-top:20px;
+			color: #000; 
+			font-weight:bold;
+			font-size: 12px;
+			font-family: Arial, Helvetica; 
+
+		}
+		.form input[type="text"] {width:100px;}
+		.form input[type="email"] {width:100px;}
+		.form input[type="password"] {width:100px;}
+		.form input[type="submit"] {
+			text-align: right;
+			background: blue;
+			color: white;
+		}
+		label{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 250px;
+    text-align: right;
+}
+
+
+input {
+  display: inline-block;
+  float: left;
+}
+
+	</style>
+	</head>
+<body>
+<p> Signup Now! </p>
+<form method='post' action='/welcomesignup'>{% csrf_token %}
+	<label>Name: </label> <input type="text" name="name" placeholder="First and last name"><br>
+	<label>Email: </label> <input type="email" name="email" placeholder="Your email"><br>
+	<label>Username: </label> <input type="text" name="username" placeholder="Create username"><br>
+	<label>Password: </label> <input type="password" name="password"
+	placeholder="Enter password"><br>
+	<label>Confirm password: </label> <input type="password" name="cpassword"
+	placeholder="Re-enter password"><br>
+	<label> Are you male or female?</label>
+	<label><input type="radio" name="sex"
+	value="male">Male<br></label>
+	<label><input type="radio" name="sex"
+	value="Female">Female<br></label>
+	<input type="submit" name="submit">
+
+</form>
+</body>

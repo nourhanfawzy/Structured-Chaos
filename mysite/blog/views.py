@@ -31,26 +31,51 @@ def home(request):
 
 
 
+def viewallposts(request):
+    if request.POST:
+        title = request.POST['title']
+        body = request.POST['body']
+        category = request.POST['category']
+        Postt(title=title, body=body, category=category).save()
+
+    return render_to_response('viewallposts.html', {
+        'posts':Postt.objects.all(),
+    }, context_instance=RequestContext(request))
+
+
 
 def index(request):
-	if request.POST:
-		title = request.POST['title']
-		body = request.POST['body']
-		category = request.POST['category']
-		Postt(title=title, body=body, category=category).save()
+    if request.POST:
+        title = request.POST['title']
+        body = request.POST['body']
+        category = request.POST['category']
+        Postt(title=title, body=body, category=category).save()
 
-	return render_to_response('index2.html', {
-		'posts':Postt.objects.all(),
-	}, context_instance=RequestContext(request))
+    return render_to_response('index2.html', {
+        'posts':Postt.objects.all(),
+    }, context_instance=RequestContext(request))
 
 
 def view_post(request, post_id):
-	p = Postt.objects.get(id=post_id)
+    p = Postt.objects.get(id=post_id)
 
-	if request.POST:
-		comment = request.POST['comment']
-		Commentt(post=p, comment=comment).save()
-	return render_to_response('view_post.html', {
-		'p':p,
-		'comments': Commentt.objects.filter(post=p),
-	}, context_instance=RequestContext(request))
+    if request.POST:
+        comment = request.POST['comment']
+        Commentt(post=p, comment=comment).save()
+    return render_to_response('view_post.html', {
+        'p':p,
+        'comments': Commentt.objects.filter(post=p),
+    }, context_instance=RequestContext(request))
+
+
+def view_post2(request, post_id):
+    p = Postt.objects.get(id=post_id)
+
+    return render_to_response('view_post2.html', {
+        'p':p,
+        'comments': Commentt.objects.filter(post=p),
+    }, context_instance=RequestContext(request))
+
+
+
+
