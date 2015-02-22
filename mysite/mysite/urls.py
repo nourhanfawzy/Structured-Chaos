@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from mysite.views import hello, current_datetime, homepage
+from mysite.views import hello, current_datetime, homepage, teampage
 from mysite.settings import MEDIA_ROOT
 
 urlpatterns = patterns('',
@@ -14,6 +14,8 @@ urlpatterns = patterns('',
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve',{'document_root' : MEDIA_ROOT}),
     url(r'^time$', current_datetime),
     url(r'^homepage$', homepage),
+    url(r'^team$', teampage),
+
     
     
     

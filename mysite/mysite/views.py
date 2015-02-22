@@ -1,7 +1,8 @@
 from django.template.loader import get_template
-from django.template import Context
+from django.template import Context, RequestContext
 from django.http import HttpResponse
-import datetime
+import datetime 
+from django.shortcuts import render_to_response
 
 def hello(request):
 	return HttpResponse("Hey Ana Fizo")
@@ -17,6 +18,10 @@ def homepage(request):
 	t = get_template('homepage.html')
 	html = t.render(Context({'current_date': now}))
 	return HttpResponse(html) 
+
+
+def teampage(request):
+	return render_to_response('team.html', {}, context_instance=RequestContext(request))
   
 
 #hena ana ba3ml function esmaha hello, request must be
