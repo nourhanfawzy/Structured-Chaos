@@ -14,18 +14,13 @@ urlpatterns = patterns('',
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve',{'document_root' : MEDIA_ROOT}),
     url(r'^time$', current_datetime),
     url(r'^homepage$', homepage),
-<<<<<<< HEAD
     url(r'^team.html$', 'mysite.views.teampage'),
-
-    url(r'^signup$', signup),
-=======
+	url(r'^signup$', signup),
     url(r'^team$', teampage),
 	url(r'^login$', 'mysite.views.login_view'),
 	url(r'^logout$', 'mysite.views.logout_view'),
 	url(r'^invalid$', 'mysite.views.invalid_login'),
 	url(r'^admin/', include(admin.site.urls)),
->>>>>>> 9e8e84b410efcb73397a0f662bf04ad5faacb17a
-    
     url(r'^login$', 'mysite.views.login_view'),
 	url(r'^logout$', 'mysite.views.logout_view'),
 	url(r'^invalid$', 'mysite.views.invalid_login'),
