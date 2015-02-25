@@ -1,11 +1,16 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
+
+from mysite.views import hello, current_datetime, homepage, teampage, signup, welcome, homepagesignup, welcomesignup
+
 from mysite.views import hello, current_datetime, homepage, teampage, signup
+
 from mysite.settings import MEDIA_ROOT
 
 urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'mysite.views.home', name='home'),
+    url(r'^blog/viewallposts.html','blog.views.viewallposts'),
     url(r'^blog/', include('blog.urls')),
 
     #url(r'^admin/', include(admin.site.urls)),
@@ -14,17 +19,31 @@ urlpatterns = patterns('',
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve',{'document_root' : MEDIA_ROOT}),
     url(r'^time$', current_datetime),
     url(r'^homepage$', homepage),
+
     url(r'^team.html$', 'mysite.views.teampage'),
-    url(r'^signup$', signup),
+
+    url(r'^signup.html$', signup),
+
+
+    url(r'^team.html$', 'mysite.views.teampage'),
+	url(r'^signup$', signup),
+
     url(r'^team$', teampage),
+	url(r'^login$', 'mysite.views.login_view'),
+	url(r'^logout$', 'mysite.views.logout_view'),
+	url(r'^invalid$', 'mysite.views.invalid_login'),
+	url(r'^admin/', include(admin.site.urls)),
+
+
     url(r'^login$', 'mysite.views.login_view'),
-    url(r'^logout$', 'mysite.views.logout_view'),
-    url(r'^invalid$', 'mysite.views.invalid_login'),
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^login$', 'mysite.views.login_view'),
-    url(r'^logout$', 'mysite.views.logout_view'),
-    url(r'^invalid$', 'mysite.views.invalid_login'),
-    url(r'^admin/', include(admin.site.urls)),
+	url(r'^logout$', 'mysite.views.logout_view'),
+	url(r'^invalid$', 'mysite.views.invalid_login'),
+	url(r'^admin/', include(admin.site.urls)),
+
+    url(r'^welcome$', welcome),
+    url(r'^welcomesignup$', welcomesignup),
+    url(r'^homepagesignup$', homepagesignup),
+
 
     url(r'^mahira.html$', 'mysite.views.mahira'),
     url(r'^fizo.html$', 'mysite.views.fizo'),
@@ -45,3 +64,5 @@ urlpatterns = patterns('',
 
 #the urlpatterns contains el urls
 #y3ni lama aft7 1stp yeban 2ndp
+
+

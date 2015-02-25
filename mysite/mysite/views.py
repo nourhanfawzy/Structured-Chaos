@@ -10,6 +10,12 @@ from django.core.context_processors import csrf
 #from django.contrub.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 
+from django.http import HttpResponseRedirect
+
+from django.core.context_processors import csrf
+#from django.contrub.auth.forms import UserCreationForm
+from django.contrib.auth import authenticate, login, logout
+
 def hello(request):
 	return HttpResponse("Hey Ana Fizo")
 
@@ -30,6 +36,8 @@ def teampage(request):
 	return render_to_response('team.html', {}, context_instance=RequestContext(request))
 
 
+#ba3d ma bakteb el function lazem 23melaha activation
+#fe el url.py file
 
 def login_view(request):
 	if request.POST:
@@ -45,7 +53,15 @@ def login_view(request):
 
 				# Redirect to a success page.el url bta3 el homepage hena
 				#return render_to_response('logout.html', {}, context_instance=RequestContext(request))
+
+
+				return render_to_response('welcomesignup.html', {'user':user}, context_instance=RequestContext(request))
+
+				return render_to_response('homepage.html', {}, context_instance=RequestContext(request))
+
 				return render_to_response('welcome.html', {'user':user}, context_instance=RequestContext(request))
+
+
 
 			else:
 				return HttpResponse('disabled account') # Return a 'disabled account' error message
@@ -55,17 +71,24 @@ def login_view(request):
 		return render_to_response('login.html', {}, context_instance=RequestContext(request))
 
 def signup(request):
-	if request.POST:
-		name = request.POST['name']
-		email = request.POST['email']
-		username = request.POST['username']
-		password = request.POST['password']
-		cpassword = request.POST['cpassword']
-		sex = request.POST['sex']
-		User(name=name, email=email, username=username, password=password, cpassword=cpassword, sex=sex).save()
+	return render_to_response('signup.html', {}, context_instance=RequestContext(request))
+
+	#if request.POST:
+		#name = request.POST['name']
+		#email = request.POST['email']
+		#username = request.POST['username']
+		#password = request.POST['password']
+		#cpassword = request.POST['cpassword']
+		#sex = request.POST['sex']
+		#User(name=name, email=email, username=username, password=password, cpassword=cpassword, sex=sex).save()
 	
-	return render_to_response('signup.html', {}, context_instance=RequestContext(request))	
-	
+		#return render_to_response('signup.html', {}, context_instance=RequestContext(request))	
+		
+		#return HttpResponse('invalid login')# Return an 'invalid login' error message.
+
+	#else:
+		#return render_to_response('login.html', {}, context_instance=RequestContext(request))
+
 def logout_view(request):
    	logout(request)
    	return render_to_response('login.html', {}, context_instance=RequestContext(request))
@@ -74,6 +97,7 @@ def invalid_login(request):
 	#if request.POST:
 		#return render_to_response('login.html', {}, context_instance=RequestContext(request))
 		return render_to_response('invalid_login.html', {}, context_instance=RequestContext(request))
+
 	#else:
 		#pass
 
@@ -99,4 +123,16 @@ def nadayasser(request):
 
 def fizo(request):
 	return render_to_response('fizo.html', {}, context_instance=RequestContext(request))
+
+def welcome(request):
+	return render_to_response('welcome.html', {}, context_instance=RequestContext(request))
+
+def welcomesignup(request):
+	return render_to_response('welcomesignup.html', {}, context_instance=RequestContext(request))
+
+
+def homepagesignup(request):
+	return render_to_response('homepagesignup.html', {}, context_instance=RequestContext(request))
+
+
 
