@@ -93,7 +93,11 @@ STAIC_ROOT = os.path.join(BASE_DIR,'static')
 MEDIA_ROOT = os.path.join(BASE_DIR,'static/media')
 MEDIA_URL = '/media/'
 
+<<<<<<< HEAD
 #TEMPLATE_DIRS = [oc.path.join(BASE_DIR, 'templates')]
+=======
+TEMPLATE_DIRRS = [os.path.join(BASE_DIR, 'templates')]
+>>>>>>> 631e6fd596733e56156dae6ec73f9c975251b479
 PASSWORD_HASHERS = (
     'django.contrib.auth.hashers.MD5PasswordHasher',
 )
