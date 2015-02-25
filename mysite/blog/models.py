@@ -1,5 +1,5 @@
 from django.db import models
-
+from datetime import datetime
 # Create your models here.
 
 class post(models.Model):
@@ -29,20 +29,17 @@ class User(models.Model):
 		return self.usernames
 
 
-
 class Postt(models.Model):
 	title = models.CharField(max_length=256)
 	body = models.TextField()
 	category = models.TextField(default="Other")
-
 	def __unicode__(self):
 		return self.title
 
 class Commentt(models.Model):
 	post = models.ForeignKey(Postt)
 	comment = models.TextField()
-
 	def __unicode__(self):
 		return self.post + ': ' + self.comment[:10]	
 
-
+	

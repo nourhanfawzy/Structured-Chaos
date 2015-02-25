@@ -1,6 +1,6 @@
 <form method='post' action='/blog/'>{% csrf_token %}
-	<input type='text' name='title' placeholder='Title'/>
-	<input type='text' name='body' placeholder='Your Post'/>
+	<input type='text' name='title' placeholder='Title'/>  <br></br>
+	<input type='text' name='body' placeholder='Your Post'/> 
 	<input type='file' name='file' />
 	<select name='category'>
     <option value="" disabled="disabled" selected="selected">Please select a category</option>
@@ -14,11 +14,25 @@
 </form>
 
 {% for p in posts %}
-	<a class='comment' href="/blog/view_post/{{ p.id }}">{{ p }}</a>
+
+    <p>Posted on .. by ..</p>
+    Title: <a class='xy' href="/blog/view_post/{{ p.id }}">{{ p }}</a>
 	<br/>
 {% endfor %}
 
 <style>
+form{
+	background-color: 009999	;
+	color: white;
+}
+body{
+	background-color: #E0E0E0 ;
+	color: black;
+	font-style: italic;
+}
+input{
+	color: black;
+
 
 body{
 	  background: url("/media/images/bck.jpg");
