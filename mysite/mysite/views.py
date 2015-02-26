@@ -11,10 +11,7 @@ from django.core.context_processors import csrf
 from django.contrib.auth import authenticate, login, logout
 
 from django.http import HttpResponseRedirect
-
-from django.core.context_processors import csrf
-#from django.contrub.auth.forms import UserCreationForm
-from django.contrib.auth import authenticate, login, logout
+from blog.models import User
 
 def hello(request):
 	return HttpResponse("Hey Ana Fizo")
@@ -57,18 +54,13 @@ def login_view(request):
 
 				return render_to_response('welcomesignup.html', {'user':user}, context_instance=RequestContext(request))
 
-				return render_to_response('homepage.html', {}, context_instance=RequestContext(request))
-
-				return render_to_response('welcome.html', {'user':user}, context_instance=RequestContext(request))
-
-
-
 			else:
 				return HttpResponse('disabled account') # Return a 'disabled account' error message
 		else:
 			return render_to_response('invalid_login.html')# Return an 'invalid login' error message.
 	else:
 		return render_to_response('login.html', {}, context_instance=RequestContext(request))
+
 
 def signup(request):
 	return render_to_response('signup.html', {}, context_instance=RequestContext(request))
@@ -127,9 +119,21 @@ def fizo(request):
 def welcome(request):
 	return render_to_response('welcome.html', {}, context_instance=RequestContext(request))
 
-def welcomesignup(request):
-	return render_to_response('welcomesignup.html', {}, context_instance=RequestContext(request))
+def contactus(request):
+	return render_to_response('contactus.html', {}, context_instance=RequestContext(request))
 
+def welcomesignup(request):
+	if request.POST:
+		name = request.POST['name']
+		email = request.POST['email']
+		username = request.POST['username']
+		password = request.POST['password']
+		cpassword = request.POST['cpassword']
+		sex = request.POST['sex']
+		User(name=name, email=email, username=username, password=password, cpassword=cpassword, sex=sex).save()
+		return render_to_response('welcomesignup.html', {}, context_instance=RequestContext(request))
+	else:
+		return render_to_response('welcomesignup.html', {}, context_instance=RequestContext(request))		
 
 def homepagesignup(request):
 	return render_to_response('homepagesignup.html', {}, context_instance=RequestContext(request))

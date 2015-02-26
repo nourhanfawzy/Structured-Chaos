@@ -5,86 +5,74 @@
 <style>
 
     body{
-    	background: url("/media/images/bck.jpg");
-    	background-size: cover;
-    	background-position: center;
-
-    }
-	
-	h1{
-		font-size: 22px;
-		color: black;
-		margin-left: 450px;
-		font-family: helvetica;
-	}
-
-    p.s{
-    	text-align: left;
-    	font-weight: 900;
-    	font-size: 30px;
-    	float: left;
+        background: url("/media/images/design.jpg");
+        background-size: cover;
+        background-position: center;
     }
 
-    p.t{
-    	font-weight: 700;
-    	font-size: 17px;
-    	text-align: center;
-
-    }
-
-    img.i1{
-    	margin-left: 500px;
-    }
-
-    img.i2{
-    	
-    }
-
-    img.i3{
-    	margin-left: 530px;
-    }
-
-    h2{
-    	font-size: 22px;
-		color: black;
-		font-family: helvetica;
-		margin-left: 475px;
-    }
-
-    input.sea{
-    	margin-left: 495px;
-    }
-
-    p.contactus{
-    	text-align: right;
-    	font-weight: 900;
-    	font-size: 30px;
-    	float: right;
-    }
-
-    img.ii{
-    	margin-left: 10px;
-    }
-
-    p.cs{
-    	text-align: right;
-    	font-weight: 700;
-    	font-size: 17px;
-    	position: absolute;
-    	right: 0px;
-    	
+    h1{
+        font-size: 40px;
+        font-family: "Times New Roman", cursive, sans-serif;
+        font-style: italic;
+        text-align: center;
     }
 
     a.team{
-        margin-left: 560px;
+
     }
 
     a.blog{
-        margin-left: 560px;
+        margin-left: 120px;
     }
 
     a.login{
-        margin-left: 520px;
+        margin-left: 120px;
+    } 
+
+    a.signup{
+        margin-left: 120px;
+    } 
+
+    a.cus{
+        margin-left: 120px;
+    }
+
+    a.i1{
+        margin-left: 10px;
+    }
+
+    .cl-effect-15 a {
+    color: rgba(0,0,0,0.2);
+    font-weight: 700;
+    text-shadow: none;
+    }
+
+    .cl-effect-15 a::before {
+    color: #fff;
+    content: attr(data-hover);
+    position: absolute;
+    transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .cl-effect-15 a:hover::before,
+    .cl-effect-15 a:focus::before {
+    transform: scale(0.9);
+    opacity: 0;
+    }
+
+    p.s{
+        text-align: left;
+        font-weight: 900;
+        float: left;
+    }
+
+    img.ii{
+        margin-left: 10px;
+    }
+
+    p.t{
+        font-weight: 900;
+        float: right;
     }
 
 
@@ -92,63 +80,50 @@
 
 
 <head>
-    <title>SC Home Page</title>
+    <title>Home Page</title>
 </head>
 
 
 <body>
 
-    <img class= "i1" src="/media/images/SC-2.png" width="200" height="110">
-
-    <h2>Making It Easy for You</h2>
-    <hr>
-    
-    <a class="login" href="login">Sign in</a>
-
-    <a href="homepage"><img class="i2" src="/media/images/Menna's Project.png" alt="Homepage icon" width="42" height="42" border="0"></a>
-
-
-    <a class="signup" href="signup.html">Sign up</a>
-
-
-    <h1>Welcome to Our Homepage</h1>
-
-    <input type = "search" class="sea" placeholder = "Find other bloggers">
-    <input type = "submit" id="sub" value = "Search">
-
-    <br></br>
-    
-    <a href="team.html" class="team">Our Team</a>
-
-    <br></br>
-    
-
-    <a href="blog/viewallposts.html" class="blog">Blog Posts</a>
-
-
-    <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-    <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-    <br></br><br></br><br></br><br></br><br></br>
-   
-    <hr>
-
-    <p class="s">Socialize With Us</p> 
-    <p class="contactus">Contact Us</p>
-    <br></br>
-
-    <a href="https://www.facebook.com/structuredchaosguc/timeline"><img class="ii" src="/media/images/FacebookLogo.png" alt="Facebook Logo" width="30" height="30" border="0"></a>
-
-    <a href="http://www.googleplus.com"><img class="ii" src="/media/images/Google_Plus_logo.png" alt="Google Plus Logo" width="28" height="28" border="0"></a>
-
-    <p class="cs">The 5th District, Cairo, Egypt</p>
-
+    <p class="s">Socialize With Us</p>
     <p class="t">It is now {{ current_date }}</p> 
-    <p class="t">Copyright © 2015 Structured-Chaos. All rights reserved.</p>
+
+    <a href="https://www.facebook.com/structuredchaosguc/timeline"><img class="ii" src="/media/images/fb2.png" alt="Facebook Logo" width="32" height="32" border="0"></a>
+
+    <a href="https://plus.google.com/u/0/115957554715721792273/about"><img class="ii" src="/media/images/gp.png" alt="Google Plus Logo" width="32" height="32" border="0"></a>
+
+    <a class="i1" href="homepage"><img src="/media/images/home.png" alt="Homepage icon" width="32" height="32" border="0"></a>
 
 
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
 
+    <nav class="cl-effect-15">
+    <a href="team.html" class="team" data-hover="Our Team">Our Team</a>
+    <a href="blog/viewallposts.html" class="blog" data-hover="Our Blog">Our Blog</a>
+    <a class="login" href="login" data-hover="Log in">Log in</a>
+    <a class="signup" href="signup.html" data-hover="Join Us">Join Us</a>
+    <a class="cus" href="contactus" data-hover="Contact Us">Contact Us</a>
+    </nav>
 
+    <hr>
+
+    <h1>Structured Chaos</h1>
+
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
     
+
 
 </body>
 

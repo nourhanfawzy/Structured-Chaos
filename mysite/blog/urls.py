@@ -1,5 +1,6 @@
 from django.conf.urls import patterns, include, url
 from blog.views import *
+from mysite.views import *
 
 urlpatterns = patterns('blog.views',
 	url(r'^$', 'index', name='home'),

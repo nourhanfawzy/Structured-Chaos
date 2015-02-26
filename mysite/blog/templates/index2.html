@@ -1,7 +1,10 @@
 <form method='post' action='/blog/'>{% csrf_token %}
 	<input type='text' name='title' placeholder='Title'/>
 	<input type='text' name='body' placeholder='Your Post'/>
+	<br></br>
 	<input type='file' name='file' />
+	<input type='submit' name='xyz' value='Upload'/>
+	<br></br>
 	<select name='category'>
     <option value="" disabled="disabled" selected="selected">Please select a category</option>
     <option value="X">X</option>
@@ -9,8 +12,9 @@
     <option value="Z">Z</option>
     <option value="Other">Other</option>
 	</select>
-	<input type='submit' name='submit' />
-	
+	<br></br>
+	<input type='submit' name='submit' value='Post' />
+
 </form>
 
 {% for p in posts %}
@@ -21,7 +25,7 @@
 <style>
 
 body{
-	  background: url("/media/images/bck.jpg");
+	  background: url("/media/images/design2.jpg");
       background-size: cover;
       background-position: fixed;
 }

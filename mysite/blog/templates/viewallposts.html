@@ -1,6 +1,11 @@
 
+
+
+<a href="homepage"><img class="i1" src="/media/images/home.png" alt="Homepage icon" width="42" height="42" border="0"></a>
+
+
 {% for p in posts %}
-	<a class='comment' href="/blog/view_post2/{{ p.id }}">{{ p }}</a>
+	<a class='comment' href="/blog/view_post2/{{ p.id }}">Title: {{ p }}</a>
 	<br/>
 {% endfor %}
 
@@ -8,14 +13,20 @@
 <style>
 
 body{
-	  background: url("/media/images/bck.jpg");
+	  background: url("/media/images/design2.jpg");
       background-size: cover;
       background-position: fixed;
+      text-align: center;
 }
 
 .comment{
 	border: 1px solid black;
 	padding:10px;
 	display: block;
+	font-size: 20px
 }
+
+    a.i1{
+        margin-left: 10px;
+    }
 </style>

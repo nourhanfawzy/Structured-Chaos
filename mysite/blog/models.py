@@ -17,7 +17,6 @@ class comment(models.Model):
 	def __unicode__(self):
 		return self.text
 
-
 class User(models.Model):
 	name = models.CharField(max_length=256)
 	email = models.CharField(max_length=256)
@@ -26,8 +25,7 @@ class User(models.Model):
 	cpassword = models.CharField(max_length=256)
 	sex = models.CharField(max_length=256)
 	def __unicode__(self):
-		return self.usernames
-
+		return self.username
 
 
 class Postt(models.Model):

@@ -3,7 +3,7 @@ from django.contrib import admin
 
 from mysite.views import hello, current_datetime, homepage, teampage, signup, welcome, homepagesignup, welcomesignup
 
-from mysite.views import hello, current_datetime, homepage, teampage, signup
+from mysite.views import hello, current_datetime, homepage, teampage, signup, contactus
 
 from mysite.settings import MEDIA_ROOT
 
@@ -11,6 +11,12 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'mysite.views.home', name='home'),
     url(r'^blog/viewallposts.html','blog.views.viewallposts'),
+    url(r'^blog/homepage',homepage),
+    url(r'^blog/login','mysite.views.login_view'),
+    url(r'^blog/view_post2/homepage', homepage),
+    url(r'^blog/view_post2/blog/viewallposts', 'blog.views.viewallposts'),
+    url(r'^blog/view_post2/login','mysite.views.login_view'),
+    url(r'^blog/view_post2/signup.html',signup),
     url(r'^blog/', include('blog.urls')),
 
     #url(r'^admin/', include(admin.site.urls)),
@@ -35,14 +41,10 @@ urlpatterns = patterns('',
 	url(r'^admin/', include(admin.site.urls)),
 
 
-    url(r'^login$', 'mysite.views.login_view'),
-	url(r'^logout$', 'mysite.views.logout_view'),
-	url(r'^invalid$', 'mysite.views.invalid_login'),
-	url(r'^admin/', include(admin.site.urls)),
-
     url(r'^welcome$', welcome),
     url(r'^welcomesignup$', welcomesignup),
     url(r'^homepagesignup$', homepagesignup),
+    url(r'^contactus.html$', contactus),
 
 
     url(r'^mahira.html$', 'mysite.views.mahira'),
@@ -52,6 +54,7 @@ urlpatterns = patterns('',
     url(r'^nourhans.html$', 'mysite.views.nourhans'),
     url(r'^nadaemad.html$', 'mysite.views.nadaemad'),
     url(r'^nadayasser.html$', 'mysite.views.nadayasser'),
+
     
 )
 
