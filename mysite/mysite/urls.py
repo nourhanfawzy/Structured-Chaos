@@ -10,6 +10,7 @@ from mysite.settings import MEDIA_ROOT
 urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'mysite.views.home', name='home'),
+    url(r'^$', homepage),
     url(r'^blog/viewallposts.html','blog.views.viewallposts'),
     url(r'^blog/homepage',homepage),
     url(r'^blog/login','mysite.views.login_view'),
